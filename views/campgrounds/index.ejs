@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>Latest Blogs</h1>
+<div>
+    <br>
+    <a href="/campgrounds/new"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" width="30px" height="30px" /></a>
+    <!-- <a href="/campgrounds/new"><button>Add Blogs</button></a> -->
+</div>
+
+<main class="my-5">
+<div class="container">
+<section class="text-center">
+<div class="row">
+<% for (let campground of campgrounds){%>
+
+
+    <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card cardstyle">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="<%= campground.images[0].url %>" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title titlestyle"><%= campground.title %></h5>
+            <p class="card-text">
+              <%= campground.description.substring(0,100) + "..." %>
+            </p>
+            <a href="/campgrounds/<%=campground._id%>" class="button-53">Read</a>
+          </div>
+        </div>
+      </div>
+<% }%>
+    </div>
+    </section>
+</div>
+</main>
