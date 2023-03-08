@@ -1,6 +1,7 @@
 # BinaryBlog
 
-BinaryBlog is a coding blog application where you can write and publish your coding articles. The application is built using Nodejs, Expressjs and it uses MongoDB as its database.
+Binary Blog is a web application built using Node.js, Express.js, and MongoDB, designed to provide coders with a platform to share their knowledge, insights, and experiences with the wider coding community. This application is designed to allow users to create, edit, and publish blog articles, which can then be viewed, read, and commented on by other users.
+
 
 ## Features
 - User registration and authentication
