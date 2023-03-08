@@ -11,6 +11,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
@@ -36,6 +37,12 @@ const connectDB = async() => {
     }
 }
 
+const sessionStorage = MongoStore.create({
+    mongoUrl: dbUrl,
+    collectionName: 'sessions',
+    ttl: 14*24*60*60,
+    autoRemove: 'native'
+});
 
 const app = express();
 
@@ -48,8 +55,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
 
- 
-const sessionConfig = { 
+const sessionConfig = {
     secret: 'thisshouldbeabettersecret!',
     resave: false,
     saveUninitialized: true,
@@ -57,7 +63,8 @@ const sessionConfig = {
         httpOnly: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
-    }
+    },
+    store: sessionStorage
 }
 
 app.use(session(sessionConfig))
