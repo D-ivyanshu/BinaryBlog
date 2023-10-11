@@ -18,7 +18,6 @@ Binary Blog is a web application built using Node.js, Express.js, and MongoDB, d
 <img width="960" alt="2" src="https://user-images.githubusercontent.com/93874215/223783226-0e700de4-0f3c-4e23-bc52-78bb86677114.PNG">
 
 <img width="960" alt="3" src="https://user-images.githubusercontent.com/93874215/223783244-c278e490-5a21-42c9-833e-1a43447b1d4f.PNG">
-<img width="699" alt="english course" src="https://github.com/D-ivyanshu/BinaryBlog/assets/93874215/191e9358-1e66-4617-bf84-00a1fedc5876">
 
 <img width="960" alt="4" src="https://user-images.githubusercontent.com/93874215/223783254-484c6954-ee50-4d3d-89cc-bafe885dfc6a.PNG">
 
